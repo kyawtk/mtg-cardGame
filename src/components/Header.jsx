@@ -1,10 +1,11 @@
 import React from 'react'
-
-const Header = () => {
+import './Header.scss'
+import logo from '../assets/images/logo.png'
+const Header = ({setModal}) => {
   return (
     <div className="header">
-        <h1> Mtg Cards brawwll</h1>
-        <button className='btn'> How to play</button>
+        <img src={logo} alt="" />
+        <button className='btn' onClick={()=>setModal(true)}> How to play</button>
     </div>
   )
 }

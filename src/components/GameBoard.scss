@@ -1,5 +1,5 @@
 .gameBoard {
-  background-color: beige;
+  min-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,12 +9,54 @@
 }
 
 .card {
-  width: 206px;
-  height:287px ;
-
+  width: 200px;
+  aspect-ratio: 2.5/3.5;
+  box-shadow: 5px 5px 3px  rgba($color: #000000, $alpha: 0.5);
+  border-radius: 8px;
+  overflow: hidden;
   img {
+    pointer-events: none;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
+  }
+}
+@media screen and (max-width : 500px) {
+  .gameBoard{
+    gap: 5px;
+  }
+  .card{
+    width: 100px;
+  }
+}
+
+
+.instructions{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  
+  color: red;
+  z-index: 998;
+  background-color: #000000d3;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  button{
+    margin-top: 2rem;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    padding: 1rem 3rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
   }
 }

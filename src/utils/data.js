@@ -18,6 +18,16 @@ import img17 from '../assets/images/img (17).jpg'
 import img18 from '../assets/images/img (18).jpg'
 import img19 from '../assets/images/img (19).jpg'
 import img20 from '../assets/images/img (20).jpg'
+import img21 from '../assets/images/img (21).jpg'
+import img22 from '../assets/images/img (22).jpg'
+import img23 from '../assets/images/img (23).jpg'
+import img24 from '../assets/images/img (24).jpg'
+import img25 from '../assets/images/img (25).jpg'
+import img26 from '../assets/images/img (26).jpg'
+import img27 from '../assets/images/img (27).jpg'
+import img28 from '../assets/images/img (28).jpg'
+import img29 from '../assets/images/img (29).jpg'
+import img30 from '../assets/images/img (30).jpg'
 
 
 
@@ -41,7 +51,18 @@ const cardsdata = [
   { src: img17, clicked: false, id: crypto.randomUUID() },
   { src: img18, clicked: false, id: crypto.randomUUID() },
   { src: img19, clicked: false, id: crypto.randomUUID() },
-  { src: img20, clicked: false, id: crypto.randomUUID() }
+  { src: img20, clicked: false, id: crypto.randomUUID() },
+  { src: img22, clicked: false, id: crypto.randomUUID() },
+  { src: img23, clicked: false, id: crypto.randomUUID() },
+  { src: img24, clicked: false, id: crypto.randomUUID() },
+  { src: img25, clicked: false, id: crypto.randomUUID() },
+  { src: img26, clicked: false, id: crypto.randomUUID() },
+  { src: img27, clicked: false, id: crypto.randomUUID() },
+  { src: img28, clicked: false, id: crypto.randomUUID() },
+  { src: img29, clicked: false, id: crypto.randomUUID() },
+  { src: img30, clicked: false, id: crypto.randomUUID() },
+  { src: img21, clicked: false, id: crypto.randomUUID() },
+  
 ];
 
 
@@ -60,3 +81,5 @@ function shuffleArray(array) {
   return array;
 }
 export {shuffleArray}
+
+

@@ -46,13 +46,14 @@ const GameBoard = ({ score, handleScore }) => {
         });
       });
       console.log(score, cardDeck.length);
-    }
-    setCardDeck((current) => shuffleArray([...current]));
+      setCardDeck((current) => shuffleArray([...current]));
     if (score + 1 == cardDeck.length) {
       handleScore(0);
       setLevel((current) => current + 1);
       setModalMessage(`Level ${level + 1}`);
     }
+    }
+    
   }
   return (
     <div className="gameBoard">

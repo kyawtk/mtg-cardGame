@@ -37,7 +37,7 @@ function App() {
               opacity: 0
             }}
           className="instructions">
-            <h1>Click every Card... But once Per item.....</h1>
+            <h1 style={{textAlign: 'center'}}>Click every Card... But once Per item.....</h1>
             <button onClick={closeModal}>Ok</button>
           </motion.div>
         )}

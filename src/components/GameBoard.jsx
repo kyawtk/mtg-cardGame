@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Modal from "./Modal";
 import clickSound from "../assets/sounds/click.wav";
 import wonSound from "../assets/sounds/win.mp3";
-import failSound from '../assets/sounds/fail.mp3'
+import failSound from "../assets/sounds/fail.mp3";
 import ReactHowler from "react-howler";
 import { shuffleArray } from "../utils/data";
 import cardsdata from "../utils/data";
@@ -35,12 +35,20 @@ const GameBoard = ({ score, handleScore }) => {
     const clickedCard = cardDeck.find((card) => card.id == id);
     if (clickedCard.clicked) {
       console.log("game over");
-      setFailed(true)
+      setFailed(true);
       setModalMessage("Game Over");
       message();
       handleScore(0);
+      if(level ==1){
+        const slice = 2 * level;
+    setCardDeck(shuffleArray(cardsdata).slice(0, slice));
 
-      setLevel(1);
+    message();
+        
+      }else{
+        setLevel(1)
+      }
+     
     } else {
       handleScore(1);
       setCardDeck((current) => {
@@ -57,15 +65,27 @@ const GameBoard = ({ score, handleScore }) => {
         handleScore(0);
         setLevel((current) => current + 1);
         setModalMessage(`Level ${level + 1}`);
-        setWon(true)
+        setWon(true);
       }
     }
   }
   return (
     <div className="gameBoard">
-      <ReactHowler src={wonSound} preload={false} onEnd={()=>setWon(false)} playing={won} volume={1} />
-      <ReactHowler src={failSound} preload={false} playing={failed} onEnd={()=>setFailed(false)} volume={1} />
-      
+      <ReactHowler
+        src={wonSound}
+        preload={false}
+        onEnd={() => setWon(false)}
+        playing={won}
+        volume={1}
+      />
+      <ReactHowler
+        src={failSound}
+        preload={false}
+        playing={failed}
+        onEnd={() => setFailed(false)}
+        volume={1}
+      />
+
       {cardDeck.map((card) => {
         return <Card key={card.id} {...card} handleClick={handleClick}></Card>;
       })}
@@ -109,7 +129,7 @@ function Card({ id, src, clicked, handleClick }) {
           preload={false}
           playing={isClicked}
           volume={0.5}
-          onEnd={()=>setIsClicked(false)}
+          onEnd={() => setIsClicked(false)}
         />
       </motion.div>
     </Tilt>
